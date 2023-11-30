@@ -1,0 +1,11 @@
+@import '../../../styles/card.scss';
+
+.ticket {
+  width: 100%;
+  background: lime;
+  
+}
+
+.ticket:hover {
+  cursor: pointer;
+}

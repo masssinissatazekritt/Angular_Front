@@ -1,0 +1,17 @@
+<div class="card ticket" (click)="selectTicket()">
+  <!-- we use the {{ }} syntax to display the data, more info: https://angular.io/guide/displaying-data-->
+  <h3>CIty{{ticket.title}}</h3>
+  <i class="fas fa-calendar-alt"></i> {{ticket.date | date: 'shortTime'}} &nbsp;&nbsp;
+  <i class="far fa-user"></i> {{ticket.eleve.nom}}- {{ticket.eleve.prenom}}
+    <!-- Use ngIf to display an icon based on the ticket.major value -->
+    <ng-container *ngIf="ticket.major === 'AI'">
+      <i class="fas fa-brain"></i> {{ticket.major}}
+    </ng-container>
+    <ng-container *ngIf="ticket.major === 'EEA'">
+      <i class="fas fa-bolt"></i> {{ticket.major}}
+    </ng-container>
+
+    <br>
+    <button (click)="deleteTicket()">Delete</button>
+    <button (click)="toggleArchivedState()">Archiver</button>
+</div>
